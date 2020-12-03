@@ -127,28 +127,28 @@ function Landing() {
                   <Tile kind="parent" horizontal style={{justifyContent: "space-around"}}>
 
                       <Tile kind="parent" style={TILE} vertical>
-                          <Image src={"./js-image.png"} style={{flex: 1}}/>
+                          <Image src={"./js-image.png"} width={100}/>
                           <Title as="h2" subtitle style={TEXT_ICON}>
                             Javascript
                           </Title>
                       </Tile>
 
                       <Tile kind="parent" style={TILE} vertical>
-                        <Image src={"./node-image.png"} style={{flex: 1}}/>
+                        <Image src={"./node-image.png"} width={100}/>
                         <Title as="h2" subtitle style={TEXT_ICON}>
                           NodeJs
                         </Title>
                       </Tile>
 
                       <Tile kind="parent" style={TILE} vertical>
-                        <Image src={"./react-image.png"} style={{flex: 1}}/>
+                        <Image src={"./react-image.png"} width={100}/>
                         <Title as="h2" subtitle style={TEXT_ICON}>
                           React
                         </Title>
                       </Tile>
 
                       <Tile kind="parent" style={TILE} vertical>
-                        <Image src={"./proto-image.png"} style={{flex: 1}}/>
+                        <Image src={"./proto-image.png"} width={100}/>
                         <Title as="h2" subtitle style={TEXT_ICON}>
                           Prototipagem
                         </Title>
