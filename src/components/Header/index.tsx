@@ -45,13 +45,13 @@ function Header() {
             <Navbar.Item as="div">
               <Field kind="group">
                 <Control>
-                  <Button as="a" href="https://twitter.com" style={BUTTON}>
+                  <Button as="a" href="https://www.instagram.com/felipvieiraa_/" style={BUTTON}>
                     <FaInstagram size={25}/> 
                     <span style={TEXT_BUTTON}>Instagram</span>
                   </Button>
                 </Control>
                 <Control>
-                  <Button as="a" href="https://twitter.com" style={BUTTON}>
+                  <Button as="a" href="https://www.linkedin.com/in/felipe-vieira-7a9146188/" style={BUTTON}>
                     <FaLinkedinIn size={25}/> 
                     <span style={TEXT_BUTTON}>LinkedIn</span>
                   </Button>
