@@ -1,6 +1,8 @@
 import Link from 'next/link';
 
 function Home(props) {
+  console.log("Passando no frontend!!")
+
   const dynamicDate = new Date();
   const dynamicDateString = dynamicDate.toGMTString();
 
@@ -22,6 +24,7 @@ function Home(props) {
 }
 
 export function getStaticProps() {
+  console.log("Passando no staticProps")
   const StaticDate = new Date();
   const StaticDateString = StaticDate.toGMTString();
 
