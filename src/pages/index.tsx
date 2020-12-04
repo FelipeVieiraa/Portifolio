@@ -1,7 +1,7 @@
 import Header from '../components/Header';
 import 'rbx/index.css';
 import { CSSProperties } from 'react';
-import { Tile, Section, Title, Image, Field, Label, Control, Input, Help, Select, Textarea, Checkbox, Radio, Button } from 'rbx';
+import { Tile, Section, Title, Image, Field, Label, Control, Input, Textarea, Checkbox, Radio, Button } from 'rbx';
 
 const IMAGE_CONTENT: CSSProperties = {
   display: "flex",
@@ -95,12 +95,12 @@ function Landing() {
   return (
     <>
       <Header />
-        <div style={MAIN}>
+        <div id="home" style={MAIN}>
           <div style={IMAGE_CONTENT}>
             <img src={'./backgroundImage.png'} />
           </div>
 
-          <div style={ABOUT_ME_CONTENT}>
+          <div id="about" style={ABOUT_ME_CONTENT}>
             <Section>
               <div style={LINE_IN_SECTION}>
                 <Title style={TITLE}>Olá,</Title>
@@ -159,7 +159,7 @@ function Landing() {
             </Section>
           </div>
 
-          <div style={WHAT_DO_I_DO_CONTENT}>
+          <div id="whatDoIDo" style={WHAT_DO_I_DO_CONTENT}>
             <Section>
               <div style={{textAlign: "center", marginBottom: 50}}>
                 <Title size={3}>Oque faço</Title>
@@ -195,7 +195,7 @@ function Landing() {
             </Section>
           </div>
 
-          <div style={CONTACT_CONTENT}>
+          <div id="contact" style={CONTACT_CONTENT}>
             <div style={{ width: "98%", display: "flex", alignItems: "center", float: "right" }}>
               <Image
                 src={'./logo.png'}

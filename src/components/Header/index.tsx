@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Link, animateScroll as scroll } from "react-scroll";
 import { Navbar, Button, Control, Field } from 'rbx';
 import { FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 
@@ -15,7 +15,7 @@ function Header() {
     <>
       <Navbar color="white">
         <Navbar.Brand>
-          <Navbar.Item href="#" relative>
+          <Navbar.Item href="/" relative>
             <img
               src={'./logo.png'}
               alt=""
@@ -27,15 +27,58 @@ function Header() {
         </Navbar.Brand>
         <Navbar.Menu>
           <Navbar.Segment align="start">
-            <Navbar.Item>Home</Navbar.Item>
-            <Navbar.Item>Quem sou</Navbar.Item>
-            <Navbar.Item>Oque faço</Navbar.Item>
+
+            <Link
+              activeClass="active"
+              to="home"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              className="navbar-item"
+            >
+              Home
+            </Link>
+
+            <Link
+              activeClass="active"
+              to="about"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              className="navbar-item"
+            >
+              Quem sou
+            </Link>
+
+            <Link
+              activeClass="active"
+              to="whatDoIDo"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              className="navbar-item"
+            >
+              O que faço
+            </Link>
 
             <Navbar.Item dropdown>
               <Navbar.Link>Mais</Navbar.Link>
               <Navbar.Dropdown>
                 <Navbar.Divider />
-                <Navbar.Item>Contato</Navbar.Item>
+                  <Link
+                    activeClass="active"
+                    to="contact"
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                    className="navbar-item"
+                  >
+                    Contato
+                  </Link>
                 <Navbar.Divider />
               </Navbar.Dropdown>
             </Navbar.Item>
