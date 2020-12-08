@@ -1,7 +1,8 @@
 import Header from '../components/Header';
 import 'rbx/index.css';
 import { CSSProperties } from 'react';
-import { Tile, Section, Title, Image, Field, Label, Control, Input, Textarea, Checkbox, Radio, Button } from 'rbx';
+import { Tile, Section, Title, Image, Field, Label, Control, Input, Textarea, Icon, Button } from 'rbx';
+import { FaEnvelope, FaEdit, FaAddressCard, FaPhone } from 'react-icons/fa';
 
 const IMAGE_CONTENT: CSSProperties = {
   display: "flex",
@@ -92,6 +93,11 @@ const CONTACT_CONTENT: CSSProperties = {
 }
 
 function Landing() {
+
+  function handleSendContact(e) {
+    console.log( "uhdsadsadsadsadsadul" )
+  }
+
   return (
     <>
       <Header />
@@ -217,8 +223,11 @@ function Landing() {
                 <Field horizontal style={{gap: 20}}>
                   <Field>
                     <Label>Seu nome</Label>
-                    <Control>
+                    <Control iconLeft iconRight>
                       <Input type="text" placeholder="Digite seu nome..." />
+                      <Icon size="medium" align="left">
+                        <FaAddressCard size={20}/>
+                      </Icon>
                     </Control>
                   </Field>
 
@@ -229,6 +238,9 @@ function Landing() {
                         placeholder="email@exemplo.com"
                         type="email"
                       />
+                      <Icon size="medium" align="left">
+                        <FaEnvelope size={20}/>
+                      </Icon>
                     </Control>
                   </Field>
                 </Field>
@@ -236,8 +248,11 @@ function Landing() {
                 <Field horizontal style={{gap: 20}}>
                   <Field>
                     <Label>Telefone</Label>
-                    <Control>
+                    <Control iconLeft iconRight>
                       <Input type="text" placeholder="(_ _)_ _ _ _ _ _ _ _" />
+                      <Icon size="medium" align="left">
+                        <FaPhone size={18}/>
+                      </Icon>
                     </Control>
                   </Field>
 
@@ -246,8 +261,10 @@ function Landing() {
                     <Control iconLeft iconRight>
                       <Input
                         placeholder="Digite aqui o assunto..."
-                        type="email"
                       />
+                      <Icon size="medium" align="left">
+                        <FaEdit size={20}/>
+                      </Icon>
                     </Control>
                   </Field>
                 </Field>
@@ -255,13 +272,13 @@ function Landing() {
                 <Field>
                   <Label>Mensagem</Label>
                   <Control>
-                    <Textarea placeholder="Digite sua mensagem..." />
+                    <Textarea style={{minHeight: 130}} placeholder="Digite sua mensagem..." />
                   </Control>
                 </Field>
 
                 <Field style={{marginTop: 40}}>
                   <Control style={{ display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "row" }}>
-                    <Button color="link">Enviar contato</Button>
+                    <Button as="button" onClick={() => console.log('trepa')} color="link">Enviar contato</Button>
                   </Control>
                 </Field>
               </form>
