@@ -1,7 +1,7 @@
 import Header from '../components/Header';
 import 'rbx/index.css';
-import { CSSProperties } from 'react';
-import { Tile, Section, Title, Image, Field, Label, Control, Input, Textarea, Icon, Button } from 'rbx';
+import { CSSProperties, useState } from 'react';
+import { Tile, Section, Title, Image, Field, Label, Control, Input, Textarea, Icon, Button, Notification, Delete } from 'rbx';
 import { FaEnvelope, FaEdit, FaAddressCard, FaPhone } from 'react-icons/fa';
 
 const IMAGE_CONTENT: CSSProperties = {
@@ -92,10 +92,22 @@ const CONTACT_CONTENT: CSSProperties = {
   paddingTop: 60
 }
 
-function Landing() {
+const Landing: React.FC = () => {
 
-  function handleSendContact(e) {
-    console.log( "uhdsadsadsadsadsadul" )
+  const [openNotifi, setOpenNotifi] = useState(false);
+  const [sendContact, setSendContact] = useState(false);
+
+  function handleSendContact() {
+    setOpenNotifi(true)
+
+    setTimeout(() => {
+      setSendContact(true)
+    }, 2500)
+  }
+  
+  function closeNotification() {
+    setOpenNotifi(false)
+    setSendContact(false)
   }
 
   return (
@@ -272,13 +284,24 @@ function Landing() {
                 <Field>
                   <Label>Mensagem</Label>
                   <Control>
-                    <Textarea style={{minHeight: 130}} placeholder="Digite sua mensagem..." />
+                    <Textarea style={{minHeight: 100}} placeholder="Digite sua mensagem..." />
                   </Control>
                 </Field>
 
                 <Field style={{marginTop: 40}}>
                   <Control style={{ display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "row" }}>
-                    <Button as="button" onClick={() => console.log('trepa')} color="link">Enviar contato</Button>
+                    <Button as="a" onClick={() => handleSendContact()} color="link">Enviar contato</Button>
+                  </Control>
+                </Field>
+
+                <Field>
+                  <Control style={{minHeight: 50}}>
+                    { openNotifi && 
+                      <Notification color="success" style={{maxWidth: 220, float: "right"}}>
+                        <Delete as="a" onClick={() => closeNotification()} />
+                        <strong>{sendContact ? 'Enviado!' : 'Enviando contato...'}</strong>
+                      </Notification>
+                    }
                   </Control>
                 </Field>
               </form>
